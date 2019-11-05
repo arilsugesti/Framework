@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class Kelompok1 extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('tekommigrasi', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nim');
+            $table->string('namalengkap');
+            $table->enum('gender', ['Laki-laki','Perempuan'])->default('Laki-laki');
+            $table->text('alamat');
+            $table->integer('idjurusan');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}
